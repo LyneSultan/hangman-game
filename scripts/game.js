@@ -78,9 +78,9 @@ function handleLetterClick(letter) {
   } else if (wrongGuesses > maxWrongGuesses) {
     alert('Game Over! The word was ' + randomWord);
     location.reload(true);
-
-
   }
+  answerSection.innerHTML = answer.join(' '); // just design to make each answer index seperated with spaces not ,
+
 }
 letter.forEach((letterDiv) => {
   letterDiv.addEventListener('click', function () {
