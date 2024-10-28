@@ -28,20 +28,20 @@ function updateHangmanImage() {
     const newPart = document.createElement('img');
     newPart.src = hangmanImages[wrongGuesses - 1];
 
-    if (wrongGuesses == 1) {
+     // Get the image filename without the path and extension
+    const imageName = hangmanImages[wrongGuesses - 1].split('/').pop().split('.')[0];
+    newPart.id = imageName;
+
+    if (imageName === 'head') {
       parts.appendChild(newPart);
       man.appendChild(parts);
-    }
-    else if (wrongGuesses == 2 || wrongGuesses == 3 || wrongGuesses == 4)
+    } else if (imageName === 'left-hand' || imageName === 'body' || imageName === 'right-hand') {
       bodyandhands.appendChild(newPart);
-
-
-    else if (wrongGuesses == 5 || wrongGuesses == 6) {
+    } else if (imageName === 'left-leg' || imageName === 'right-leg') {
       legs.appendChild(newPart);
-      console.log(legs)
+      console.log(legs);
     }
 
-    console.log(legs)
 
     man.appendChild(bodyandhands);
 
