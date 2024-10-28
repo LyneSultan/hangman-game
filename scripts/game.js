@@ -54,7 +54,8 @@ function updateHangmanImage() {
 function init() {
   answer = Array(randomWord.length).fill('_');
   wrongGuesses = 0;
-
+    
+  answerSection.innerHTML = answer.join(' '); // just design to make each answer index seperated with spaces not ,
 }
 
 
